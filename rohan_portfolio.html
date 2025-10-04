@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Srivastava - Software Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+        }
+
+        .contact-item i {
+            color: #667eea;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #0077b5;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #005885;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-size: 1.8em;
+        }
+
+        .about-text {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 1.3em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .experience-company {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .experience-date {
+            color: #888;
+            font-style: italic;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .experience-item li {
+            margin-bottom: 8px;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .education-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .education-details {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            color: #555;
+        }
+
+        .skill-category li:before {
+            content: "▹ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .interests {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .interest-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img">R</div>
+            <h1>ROHAN SRIVASTAVA</h1>
+            <p class="subtitle">Software Engineer</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 8409631398</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>rohansri08@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Patna, Bihar, India</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="downloadResume()">
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                </button>
+                <a href="https://www.linkedin.com/in/rohan-srivastava-9b9061201" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn Profile
+                </a>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <div class="about-text">
+                <p>Enthusiastic and reliable Java developer with 3+ years of experience in the IT industry. I have effective participation in all aspects of the software development cycle, including estimating, technical design, implementation, documentation, testing, deployment, and support of applications developed for various clients.</p>
+                <br>
+                <p>I possess the ability to efficiently solve problems and collaborate with teams to deliver high-quality creative solutions in a timely manner. Experienced in finding cost-effective solutions for sustained revenue and profitability, I am committed to innovation and actionable insights for sustainable growth.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Engineer</div>
+                        <div class="experience-company">Integrated Software Enterprises</div>
+                    </div>
+                    <div class="experience-date">August 2022 – Present</div>
+                </div>
+                <ul>
+                    <li>Developed codes and supported a 3-member team for project success, demonstrating competence in Java 8, JavaScript, and Python</li>
+                    <li>Translated client business requirements and objectives into technical applications and solutions</li>
+                    <li>Provided 24/7 support to resolve customer problems, maintain quality standards, and ensure application responsiveness</li>
+                    <li>Wrote automated scripts to identify low-performing workflows and optimized them by 60%</li>
+                    <li>Contributed and facilitated architectural discussions that brought out best-of-breed solutions</li>
+                    <li>Coordinated with QA testing team to test various scenarios involving Test Plans, Test Cases, and Test Scripts</li>
+                    <li>Analyzed defects and incidents to resolve bugs in existing systems</li>
+                    <li>Provided software development support in staging and production environments</li>
+                    <li>Handled critical operation tasks and on-demand support requests from tenant applications</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="education-item">
+                <div class="education-title">B.Tech, Computer Science & Information Technology</div>
+                <div class="education-details">
+                    CV Raman Global University<br>
+                    August 2018 – August 2022
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-title">Intermediate (Higher Secondary) - PCM</div>
+                <div class="education-details">
+                    St Joseph School<br>
+                    May 2016 – March 2018
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-title">Matriculation (Secondary)</div>
+                <div class="education-details">
+                    DAV<br>
+                    April 2015 – March 2016
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-code"></i> Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>Java 8</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>HTML, CSS</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Platforms</h3>
+                    <ul>
+                        <li>Java Collections</li>
+                        <li>Spring Boot</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Core Competencies</h3>
+                    <ul>
+                        <li>Code Development & Optimization</li>
+                        <li>Data & Requirement Analysis</li>
+                        <li>Debugging</li>
+                        <li>Software & Unit Testing</li>
+                        <li>Web Application Development</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Methodologies</h3>
+                    <ul>
+                        <li>Agile & Scrum</li>
+                        <li>Project Management</li>
+                        <li>System Implementation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-heart"></i> Interests</h2>
+            <div class="interests">
+                <div class="interest-item">
+                    <i class="fas fa-plane"></i>
+                    Travelling
+                </div>
+                <div class="interest-item">
+                    <i class="fas fa-book"></i>
+                    Reading
+                </div>
+                <div class="interest-item">
+                    <i class="fas fa-cricket"></i>
+                    Cricket
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Rohan Srivastava. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function downloadResume() {
+            const resumeContent = `ROHAN SRIVASTAVA
+Software Engineer
+
+Contact Information:
+Phone: +91 8409631398
+Email: rohansri08@gmail.com
+LinkedIn: linkedin.com/in/rohan-srivastava-9b9061201
+
+PROFESSIONAL SUMMARY
+Enthusiastic and reliable Java developer with 3+ years of experience in the IT industry. Effective participation in all aspects of the software development cycle, including estimating, technical design, implementation, documentation, testing, deployment, and support of applications developed for various clients.
+
+EXPERIENCE
+
+Software Engineer | Integrated Software Enterprises
+August 2022 – Present
+
+• Developed codes and supported a 3-member team for project success, demonstrating competence in Java 8, JavaScript, and Python
+• Translated client business requirements and objectives into technical applications and solutions
+• Provided 24/7 support to resolve customer problems, maintain quality standards, and ensure application responsiveness
+• Wrote automated scripts to identify low-performing workflows and optimized them by 60%
+• Contributed and facilitated architectural discussions that brought out best-of-breed solutions
+• Coordinated with QA testing team to test various scenarios involving Test Plans, Test Cases, and Test Scripts
+• Analyzed defects and incidents to resolve bugs in existing systems
+
+EDUCATION
+
+B.Tech, Computer Science & Information Technology
+CV Raman Global University | August 2018 – August 2022
+
+Intermediate (Higher Secondary) - PCM
+St Joseph School | May 2016 – March 2018
+
+Matriculation (Secondary)
+DAV | April 2015 – March 2016
+
+TECHNICAL SKILLS
+
+Languages: Java 8, JavaScript, Python, HTML, CSS, SQL
+Frameworks: Java Collections, Spring Boot
+Methodologies: Agile & Scrum
+Core Competencies: Code Development & Optimization, Data & Requirement Analysis, Debugging, Software & Unit Testing, Web Application Development, Project Management
+
+INTERESTS
+
+Travelling, Reading, Cricket
+`;
+
+            const blob = new Blob([resumeContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Rohan_Srivastava_Resume.txt';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>
